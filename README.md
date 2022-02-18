@@ -23,6 +23,18 @@
 ## Overview
 ## Motivation
 ## Feature
+## Usage
+
+> NOTE: 
+### Install
+```bash
+$ git clone https://github.com/microdynamics-cpu/tree-core-sim.git
+$ cd tree-core-sim
+```
+
+```bash
+$ sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-dev libffi-dev git mercurial graphviz xdot pkg-config python python3 libftdi-dev qt5-default python3-dev libboost-all-dev cmake libeigen3-dev
+```
 
 ## License
 All of the TreeCore codes are release under the [GPL-3.0 License](LICENSE).
