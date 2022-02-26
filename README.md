@@ -1,6 +1,6 @@
 <p align="center">
     <!-- <img width="200px" src="./.images/tree_core_logo.svg" align="center" alt="Tree Core CPU" /> -->
-    <h2 align="center">TreeCore Sim: </h2>
+    <h2 align="center">TreeCore Sim: A Lightweight cloudFPGA Prototype for Processor Simulation</h2>
 </p>
 <p align="center">
     <a href="./LICENSE">
@@ -31,7 +31,6 @@
 $ git clone https://github.com/microdynamics-cpu/tree-core-sim.git
 $ cd tree-core-sim
 ```
-
 
 ```bash
 $ mkdir -p ~/Desktop/swap
