@@ -35,6 +35,8 @@ $ git clone https://github.com/microdynamics-cpu/tree-core-sim.git
 $ cd tree-core-sim
 ```
 
+Then, adding extra swap sapce to avoid the exhaustion of heap memory.
+> NOTE: Below steps is not essential. If your embedded platform have more that 4GB memory space, you can just skip these steps. In addition, the installation sequence of libraries is not arbitrary, some libraries have dependency relation. So you should install libraries one by one.
 ```bash
 $ mkdir -p ~/Desktop/swap
 $ cd ~/Desktop/swap
@@ -69,6 +71,8 @@ $ cmake -DARCH=ice40 -DCMAKE_INSTALL_PREFIX=/usr/local .
 $ make -j$(nproc)
 $ sudo make install
 ```
+
+> NOTE: After compiled done, if you encouter  error in link phase like ` error: lto-wrapper failed collect2: error: ld returned 1 exit status`, that possible means the compiler of your embedded platform doesn't support the [IPO](https://en.wikipedia.org/wiki/Interprocedural_optimization) perfactly. You need to switch `USE_IPO` option from `ON` to `OFF ` in CMakefile.txt.
 
 ```bash
 $ git clone https://github.com/YosysHQ/yosys.git yosys
