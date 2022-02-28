@@ -33,10 +33,11 @@
 ```bash
 $ git clone https://github.com/microdynamics-cpu/tree-core-sim.git
 $ cd tree-core-sim
+$ mkdir dependency && cd dependency
 ```
 
 Then, adding extra swap sapce to avoid the exhaustion of heap memory.
-> NOTE: Below steps is not essential. If your embedded platform have more that 4GB memory space, you can just skip these steps. In addition, the installation sequence of libraries is not arbitrary, some libraries have dependency relation. So you should install libraries one by one.
+> NOTE: Below steps is not essential. If your embedded platform have more that 4GB memory space, you can just skip these steps.
 ```bash
 $ mkdir -p ~/Desktop/swap
 $ cd ~/Desktop/swap
@@ -46,6 +47,7 @@ $ sudo mkswap swapfile
 $ sudo swapon swapfile
 ```
 
+> NOTE: The installation sequence of libraries is not arbitrary, some libraries have dependency relation. So you should install libraries one by one in order that's been exhibited here.
 ```bash
 $ sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-dev libffi-dev git mercurial graphviz xdot pkg-config python python3 libftdi-dev qt5-default python3-dev libboost-all-dev cmake libeigen3-dev
 ```
@@ -56,7 +58,7 @@ $ cd icestorm
 $ make -j$(nproc)
 $ sudo make install
 ```
-
+If your embedded platform is short of memory, you can decrease the number of jobs by switch `-j$(nproc)` into `-j1`.
 ```bash
 $ git clone https://github.com/cseed/arachne-pnr.git arachne-pnr
 $ cd arachne-pnr
@@ -72,7 +74,7 @@ $ make -j$(nproc)
 $ sudo make install
 ```
 
-> NOTE: After compiled done, if you encouter  error in link phase like ` error: lto-wrapper failed collect2: error: ld returned 1 exit status`, that possible means the compiler of your embedded platform doesn't support the [IPO](https://en.wikipedia.org/wiki/Interprocedural_optimization) perfactly. You need to switch `USE_IPO` option from `ON` to `OFF ` in CMakefile.txt.
+> NOTE: After `nextpnr` compiled done, if you encouter  error in link phase like ` error: lto-wrapper failed collect2: error: ld returned 1 exit status`, that possible means the compiler of your embedded platform cannot support the [IPO](https://en.wikipedia.org/wiki/Interprocedural_optimization) perfactly. You need to switch `USE_IPO` option from `ON` to `OFF ` in [CMakefile.txt](./dependency/nextpnr/CMakefile.txt).
 
 ```bash
 $ git clone https://github.com/YosysHQ/yosys.git yosys
@@ -85,6 +87,6 @@ $ sudo make install
 All of the TreeCore codes are release under the [GPL-3.0 License](LICENSE).
 
 ## Acknowledgement
-
+1. [icesugar](https://github.com/wuxx/icesugar)
 
 ## Reference
