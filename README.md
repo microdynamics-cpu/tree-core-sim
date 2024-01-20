@@ -1,5 +1,4 @@
 <p align="center">
-
     <h2 align="center">TreeCore Sim: A Lightweight cloudFPGA Prototype for Processor Simulation</h2>
 </p>
 <p align="center">
